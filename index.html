@@ -1,95 +1,117 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Ashmith K | Portfolio</title>
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
-  <link rel="stylesheet" href="style.css">
+  <title>My Portfolio</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: #f9f9f9;
+      color: #333;
+    }
+    nav {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      background: #222;
+      padding: 15px;
+      display: flex;
+      justify-content: center;
+      z-index: 1000;
+    }
+    nav a {
+      color: #fff;
+      text-decoration: none;
+      margin: 0 20px;
+      font-size: 18px;
+      cursor: pointer;
+    }
+    nav a:hover {
+      color: #00c3ff;
+    }
+    section {
+      display: none;
+      padding: 100px 20px;
+      text-align: center;
+      min-height: 100vh;
+    }
+    section.active {
+      display: block;
+    }
+    h1 {
+      font-size: 2.5em;
+      margin-bottom: 20px;
+    }
+    .btn {
+      padding: 10px 20px;
+      background: #00c3ff;
+      color: #fff;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      text-decoration: none;
+    }
+    .btn:hover {
+      background: #009ac7;
+    }
+  </style>
 </head>
 <body>
+  <!-- Navbar -->
+  <nav>
+    <a onclick="showSection('home')">Home</a>
+    <a onclick="showSection('skills')">Skills</a>
+    <a onclick="showSection('projects')">Projects</a>
+    <a onclick="showSection('resume')">Resume</a>
+    <a onclick="showSection('contact')">Contact</a>
+  </nav>
 
-  <!-- Hero Section -->
-  <header class="hero d-flex flex-column justify-content-center align-items-center text-center text-white">
-    <img src="profile.jpg" alt="Ashmith K" class="rounded-circle mb-3" style="width: 150px; height: 150px; object-fit: cover; border: 4px solid #fff;">
-    <h1>Hi, I’m <span class="highlight">Ashmith K</span></h1>
-    <p>Computer Science Student | Developer | </p>
-    <a href="#contact" class="btn btn-custom mt-3">Get in Touch</a>
-  </header>
-
-  <!-- About Section -->
-  <section id="about" class="container py-5">
-    <h2 class="text-center mb-4">About Me</h2>
-    <p class="text-center">
-      I’m a passionate Computer Science & Engineering student with experience in web development, 
-      cryptography, AR/VR, and UI/UX design.  
-      Skilled in Java, C++, Python, and databases, I love building unique projects that blend 
-      creativity with technology.
-    </p>
+  <!-- Sections -->
+  <section id="home" class="active">
+    <img src="profile.jpg" alt="Ashmith K" style="width:140px; height:140px; object-fit:cover; border-radius:50%; border:4px solid #00c3ff; margin-bottom:20px;">
+    <h1>Hi, I'm Ashmith K</h1>
+    <p>Passionate Computer Science student with expertise in Java, Python, Web Development, and AI.</p>
   </section>
 
-  <!-- Skills Section -->
-  <section id="skills" class="bg-light py-5">
-    <div class="container">
-      <h2 class="text-center mb-4">Skills</h2>
-      <div class="row text-center">
-        <div class="col-md-3"><div class="card shadow-sm p-3">Java / Python / C++</div></div>
-        <div class="col-md-3"><div class="card shadow-sm p-3">Web Dev (HTML, CSS, Bootstrap)</div></div>
-        <div class="col-md-3"><div class="card shadow-sm p-3">Databases (MySQL, MongoDB)</div></div>
-        <div class="col-md-3"><div class="card shadow-sm p-3">UI/UX Design & Prototyping</div></div>
-      </div>
-    </div>
+  <section id="skills">
+    <h1>Skills</h1>
+    <p>✔ Programming: Java, Python, C++</p>
+    <p>✔ Web: HTML, CSS, JavaScript, Bootstrap</p>
+    <p>✔ Databases: MySQL, MongoDB</p>
+    <p>✔ Tools: Git, VS Code, Canva</p>
   </section>
 
-  <!-- Projects Section -->
-  <section id="projects" class="container py-5">
-    <h2 class="text-center mb-4">Projects</h2>
-    <div class="row">
-      <div class="col-md-4 mb-3">
-        <div class="card shadow-sm p-3">
-          <h5>Augmented Campus Guide</h5>
-          <p>AR-based navigation app with camera + virtual arrows for campus exploration.</p>
-        </div>
-      </div>
-      <div class="col-md-4 mb-3">
-        <div class="card shadow-sm p-3">
-          <h5>RSA Cryptography Tool</h5>
-          <p>Java-based RSA system with BigInteger for secure message encryption/decryption.</p>
-        </div>
-      </div>
-      <div class="col-md-4 mb-3">
-        <div class="card shadow-sm p-3">
-          <h5>Portfolio Website</h5>
-          <p>Clean single-page personal site showcasing my resume, skills, and projects.</p>
-        </div>
-      </div>
-    </div>
+  <section id="projects">
+    <h1>Projects</h1>
+    <p><b>📌 AR Campus Tour:</b> Built an AR-based navigation system for college.</p>
+    <p><b>📌 RSA Cryptography Tool:</b> Implemented secure encryption/decryption in Java.</p>
+    <p><b>📌 Personal Portfolio:</b> Designed this interactive website to showcase my work.</p>
   </section>
 
-  <!-- Resume Section -->
-  <section id="resume" class="bg-light py-5">
-    <div class="container text-center">
-      <h2 class="mb-4">Resume</h2>
-      <p>Click below to view or download my resume.</p>
-      <a href="resume.pdf" class="btn btn-custom" target="_blank">Download Resume</a>
-    </div>
+  <section id="resume">
+    <h1>Resume</h1>
+    <p>Download my resume below:</p>
+    <a href="resume.pdf" class="btn" target="_blank">Download Resume</a>
   </section>
 
-  <!-- Contact Section -->
-  <section id="contact" class="container py-5">
-    <h2 class="text-center mb-4">Contact Me</h2>
-    <div class="text-center">
-      <p>Email: <a href="mailto:ronaldo@example.com">ashmithk14@gmail.com</a></p>
-      <p>Phone: +91-9745782273</p>
-      <p>LinkedIn: <a href="https://linkedin.com/in/ashmith" target="_blank">linkedin.com/in/ashmith</a></p>
-    </div>
+  <section id="contact">
+    <h1>Contact Me</h1>
+    <p>Email: <a href="mailto:ronaldo@example.com">ashmithk14@gmail.com</a></p>
+    <p>Phone: +91 9745782273</p>
+    <p>LinkedIn: <a href="https://linkedin.com/in/ashmith" target="_blank">linkedin.com/in/ashmith</a></p>
   </section>
 
-  <!-- Footer -->
-  <footer class="text-center py-3">
-    <p>© 2025 Ashmith K. All Rights Reserved.</p>
-  </footer>
-
+  <!-- Script -->
+  <script>
+    function showSection(sectionId) {
+      document.querySelectorAll("section").forEach(sec => {
+        sec.classList.remove("active");
+      });
+      document.getElementById(sectionId).classList.add("active");
+    }
+  </script>
 </body>
 </html>
