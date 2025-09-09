@@ -1,0 +1,37 @@
+
+body {
+  font-family: 'Segoe UI', sans-serif;
+  background-color: #f8f9fa;
+}
+
+/* Hero Section */
+.hero {
+  height: 100vh;
+  background: linear-gradient(135deg, #004aad, #009ffd);
+}
+.hero h1 {
+  font-size: 3rem;
+  font-weight: bold;
+}
+.hero .highlight {
+  color: #ffe600;
+}
+.btn-custom {
+  background-color: #009ffd;
+  color: white;
+  border-radius: 30px;
+  padding: 10px 20px;
+}
+.btn-custom:hover {
+  background-color: #004aad;
+  color: white;
+}
+
+/* Cards */
+.card {
+  border-radius: 15px;
+  transition: transform 0.2s;
+}
+.card:hover {
+  transform: translateY(-5px);
+}
